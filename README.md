@@ -59,7 +59,7 @@ Once your board runs Swift, if your version support the Swift Package Manager, y
   ) 
 ```
 
-The directory `Examples` contains sample projects that uses SPM, compile it and run the sample with `./.build/debug/main`.
+The directory `Examples` contains sample projects that uses SPM, compile it and run the sample with `./.build/debug/TestMCP`.
 
 If SPM is not supported, you'll need to manually download the library and its dependencies: 
 
