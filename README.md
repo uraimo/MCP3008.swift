@@ -46,6 +46,7 @@ Please refer to the [SwiftyGPIO](https://github.com/uraimo/SwiftyGPIO) readme fo
 
 Once your board runs Swift, if your version support the Swift Package Manager, you can simply add this library as a dependency of your project and compile with `swift build`:
 
+```swift
   let package = Package(
       name: "MyProject",
       dependencies: [
@@ -54,13 +55,14 @@ Once your board runs Swift, if your version support the Swift Package Manager, y
       ]
       ...
   ) 
+```
 
-The directory `Examples` contains sample projects that uses SPM, compile it and run the sample with `./.build/debug/TestServo`.
+The directory `Examples` contains sample projects that uses SPM, compile it and run the sample with `./.build/debug/main`.
 
 If SPM is not supported, you'll need to manually download the library and its dependencies: 
 
-    wget https://raw.githubusercontent.com/uraimo/MCP3008.swift/master/Sources/MCP3008.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/SwiftyGPIO.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/Presets.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/SPI.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/SunXi.swift
-     
+    wget https://raw.githubusercontent.com/uraimo/MCP3008.swift/master/Sources/MCP3008.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/SwiftyGPIO.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/Presets.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/SPI.swift https://raw.githubusercontent.com/uraimo/SwiftyGPIO/master/Sources/SunXi.swift  
+
 And once all the files have been downloaded, create an additional file that will contain the code of your application (e.g. main.swift). When your code is ready, compile it with:
 
     swiftc *.swift
