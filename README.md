@@ -13,6 +13,8 @@
 
 This simple library read the values produced by the MCP3008 10 bits SPI-driven ADC. This components is able to convert analogical signal (with a voltage range defined by Vref, most of the time you'll put Vref and Vdd to 5V) to an integer value between 0 and 1023. This kind of component is extremely useful for example for boards like the RaspberryPis that don't have their own analog input pins like an Arduino.
 
+![MCP3008 diagram](https://github.com/uraimo/MCP3008.swift/raw/master/mcp3008.png)
+
 ## Supported Boards
 
 Every board supported by [SwiftyGPIO](https://github.com/uraimo/SwiftyGPIO): RaspberryPis, BeagleBones, C.H.I.P., etc...
