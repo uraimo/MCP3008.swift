@@ -1,3 +1,4 @@
+import SwiftyGPIO
 import MCP3008
 
 let spis = SwiftyGPIO.hardwareSPIs(for:.RaspberryPi2)!
