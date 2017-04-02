@@ -41,7 +41,7 @@ public class MCP3008{
    ///            fraction of Vref. Most of the times you'll connect Vdd and Vref to +5V. 
    ///
    public func readValue(for channel: Int) -> UInt32{
-      let tx: [UInt8] = [1, (8+channel) << 4, 0]
+      let tx: [UInt8] = [1, (8+UInt8(channel)) << 4, 0]
 
       let rx = spi.sendDataAndRead(tx)
       return (UInt32(rx[1]&3) << 8) + UInt32(rx[2])
