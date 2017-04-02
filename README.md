@@ -11,13 +11,7 @@
 
 # Summary
 
-This simple library can control an SG90 servo motor with a PWM, that has a 20ms period and duty cycle that represent these positions:
-
-* 1ms = 5%: _-90°, left position_
-* 1.5ms = 7.5%: _-90°, middle position_
-* 2ms = 10%: _+90°, right position_
-
-Your servo could have slightly different settings (1-2% difference), play around with the values in the `Position` enum (expressed in percentage) to find the right duty cycles for your servo.
+This simple library read the values produced by the MCP3008 10 bits SPI-driven ADC. This components is able to convert analogical signal (with a voltage range defined by Vref, most of the time you'll put Vref and Vdd to 5V) to an integer value between 0 and 1023. This kind of component is extremely useful for example for boards like the RaspberryPis that don't have their own analog input pins like an Arduino.
 
 ## Supported Boards
 
@@ -43,7 +37,7 @@ let m = MCP3008(spi)
 Then use `readValue` to read the current converted value (0...1023) from one of the analog inputs:
 
 ```swift
-m.readValue(0)
+m.readValue(0) //CH0 pin
 ```
 
 ## Installation
@@ -61,7 +55,7 @@ Once your board runs Swift, if your version support the Swift Package Manager, y
       ...
   ) 
 
-The directory `Examples` contains sample projects that uses SPM, compile it and run the sample with `sudo ./.build/debug/TestServo`.
+The directory `Examples` contains sample projects that uses SPM, compile it and run the sample with `./.build/debug/TestServo`.
 
 If SPM is not supported, you'll need to manually download the library and its dependencies: 
 
@@ -73,4 +67,3 @@ And once all the files have been downloaded, create an additional file that will
 
 The compiler will create a **main** executable.
 
-As everything interacting with GPIOs, if you are not already root or member of a specific gpio group, you will need to run that binary with `sudo ./main`.
