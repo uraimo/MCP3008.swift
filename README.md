@@ -42,6 +42,24 @@ Then use `readValue` to read the current converted value (0...1023) from one of 
 m.readValue(0) //CH0 pin
 ```
 
+The library also support virtual spis using bit-banging:
+
+```swift
+let gpios = SwiftyGPIO.GPIOs(for:.RaspberryPi2)
+var cs = gpios[.P27]!
+var mosi = gpios[.P22]!
+var miso = gpios[.P4]!
+var clk = gpios[.P17]!
+
+var spi = VirtualSPI(mosiGPIO: mosi, misoGPIO: miso, clockGPIO: clk, csGPIO: cs)
+
+let m = MCP3008(spi)
+
+for i in 0...7 {
+    print("Value for channel ",i,": ",m.readValue(for: i) << 1) //Shift required to obtain the correct value
+}
+```
+
 ## Installation
 
 Please refer to the [SwiftyGPIO](https://github.com/uraimo/SwiftyGPIO) readme for Swift installation instructions.
