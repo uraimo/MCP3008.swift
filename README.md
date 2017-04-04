@@ -11,7 +11,7 @@
 
 # Summary
 
-This simple library read the values produced by the MCP3008 10 bits SPI-driven ADC. This components is able to convert analogical signal (with a voltage range defined by Vref, most of the time you'll put Vref and Vdd to 5V) to an integer value between 0 and 1023. This kind of component is extremely useful for example for boards like the RaspberryPis that don't have their own analog input pins like an Arduino.
+This simple library reads the values produced by the MCP3008 10 bits SPI-driven ADC. This component is able to convert analog signals (with a voltage range defined by Vref, most of the times you'll connect Vref and Vdd to 5V) to an integer value between 0 and 1023. ADCs are extremely useful for example for boards like the RaspberryPis that don't have their own analog input pins (like Arduinos or traditional embedded boards).
 
 ![MCP3008 diagram](https://github.com/uraimo/MCP3008.swift/raw/master/mcp3008.png)
 
@@ -36,11 +36,12 @@ let spi = spis[0]
 let m = MCP3008(spi)
 ```
 
-Then use `readValue` to read the current converted value (0...1023) from one of the analog inputs:
+Then just use `readValue` to read the current converted value (0...1023) from one of the analog inputs:
 
 ```swift
 m.readValue(0) //CH0 pin
 ```
+Reading a value from an unconnected channel (floating input) will give meaningless values, so, be sure to read from the right input.
 
 The library also support virtual spis using bit-banging:
 
