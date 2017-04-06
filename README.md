@@ -25,7 +25,7 @@ The example below will use a RaspberryPi 2 board but you can easily modify the e
 
 ## Usage
 
-The first thing we need to do is to obtain an instance of `SPIOutput` from SwiftyGPIO and use it to initialize the `MCP3008` object:
+The first thing we need to do is to obtain an instance of `SPIInterface` from SwiftyGPIO and use it to initialize the `MCP3008` object:
 
 ```swift
 import SwiftyGPIO
