@@ -27,9 +27,9 @@ import SwiftyGPIO  //Comment this when not using the package manager
 
 
 public class MCP3008{
-   var spi: SPIOutput
+   var spi: SPIInterface
 
-   public init(_ spi: SPIOutput) {
+   public init(_ spi: SPIInterface) {
        self.spi = spi
    }
 
